@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import FacePalmMeter from "@/components/FacePalmMeter";
 
 export default function Home() {
   const [joke, setJoke] = useState<string>("");
@@ -42,7 +43,10 @@ export default function Home() {
           {loading ? (
             <div className="joke-text"><span className="loader"></span></div>
           ) : (
-            <p className="joke-text">{joke}</p>
+            <>
+              <p className="joke-text">{joke}</p>
+              <FacePalmMeter joke={joke} />
+            </>
           )}
         </div>
 
